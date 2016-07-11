@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sharing Debugger Bookmarklet</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      html {
+        display: table;
+      }
+
+      body {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+      }
+
+      .button {
+        display: inline-block;
+        background: #365899;
+        color: #fff;
+        font-family: 'Helvetica Neue', Helvetica, sans-serif;
+        padding: 10px;
+        font-size: 3em;
+        text-decoration: none;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var button = document.querySelector('.button')
+
+        button.addEventListener('click', function (e) {
+          alert('Drag this link into your bookmark bar :)')
+
+          e.preventDefault()
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <a href="javascript:void(document.location='https://developers.facebook.com/tools/debug/og/object?q='+encodeURI(location.href))
+" class="button">Sharing Debugger</a>
+  </body>
+</html>
